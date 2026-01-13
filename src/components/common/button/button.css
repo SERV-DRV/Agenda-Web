@@ -1,0 +1,53 @@
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;               
+    padding: 10px 16px;
+    border-radius: 14px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 20px;
+    transition: 
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.button-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.button-container:active {
+    transform: scale(0.97);
+}
+
+.button-image {
+    width: 44px;
+    height: 44px;
+    background-color: #374151;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.button-image img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+/* Aquí bajamos el texto un poco con margin-top */
+.button-text {
+    margin: 3px 0 0 0;  /* solo margin-top:3px */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1f2937;
+    user-select: none;
+    white-space: nowrap;
+}

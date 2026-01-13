@@ -1,0 +1,12 @@
+.item-contacto {
+    border: 1px solid #ccc; 
+    border-radius: 1rem;
+    padding: 1rem;
+    
+    display: flex; 
+    align-items: center; 
+    gap: 1rem;
+    
+    width: 100%;
+    box-sizing: border-box; 
+}
