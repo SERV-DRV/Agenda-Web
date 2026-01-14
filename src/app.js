@@ -1,5 +1,6 @@
 import { Button } from "./components/common/button/Button.js";
 import { Contactos } from "./components/sections/contactos/Contactos.js";
+import { NewContactForm } from "./components/sections/newContactForm/NewContactForm.js";
 //App
 let app = document.getElementById("app");
  
@@ -13,8 +14,9 @@ nav.appendChild(Button("Crear Tarea", "plus", "plus.svg"));
  
 //section container
 let container = document.getElementById("container");
+container.innerHTML="";
 container.appendChild(Contactos());
  
 //cargar el DOM
-// app.appendChild(nav);
-// app.appendChild(container);
+app.appendChild(nav);
+app.appendChild(container);

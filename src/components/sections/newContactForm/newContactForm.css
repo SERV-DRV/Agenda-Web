@@ -1,0 +1,59 @@
+.contact-form {
+    max-width: 400px;
+    margin: 30px auto;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.contact-form__fieldset {
+    border: 1px solid #ccc;
+    padding: 20px 25px;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.contact-form__legend {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    padding: 0 10px;
+}
+
+.contact-form__label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.contact-form__input {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form__input:focus {
+    outline: none;
+    border-color: #2c7be5;
+    box-shadow: 0 0 0 2px rgba(44, 123, 229, 0.15);
+}
+
+.contact-form__button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #2c7be5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form__button:hover {
+    background-color: #1a68d1;
+}
