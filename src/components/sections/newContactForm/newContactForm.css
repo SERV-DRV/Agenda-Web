@@ -57,3 +57,10 @@
 .contact-form__button:hover {
     background-color: #1a68d1;
 }
+
+.contact-form__button:active {
+    background-color: #1a68d1; 
+    transform: translate(0px, 7px);
+    transition: 0.3s ease;
+}
+
