@@ -1,10 +1,11 @@
-let ItemToDoList = (titulo, fechaVencimiento, estado) => {
+let ItemToDoList = (titulo, fechaVencimiento, descripcion) => {
     let div = document.createElement("div");
     div.className = "item-todolist";
 
-    let simbolo = document.createElement("p");
+    let simbolo = document.createElement("img");
     simbolo.className = "item-todolist__simbolo";
-    simbolo.textContent = "❌";
+    simbolo.src = "./assets/icons/x.svg";
+    simbolo.alt = "No completado";
 
     let pTitulo = document.createElement("p");
     pTitulo.className = "item-todolist__text";
@@ -14,18 +15,22 @@ let ItemToDoList = (titulo, fechaVencimiento, estado) => {
     pFecha.className = "item-todolist__fecha";
     pFecha.textContent = fechaVencimiento;
 
-    let pEstado = document.createElement("p");
-    pEstado.className = "item-todolist__estado";
-    pEstado.textContent = estado;
+    let pDescripcion = document.createElement("p");
+    pDescripcion.className = "item-todolist__descripcion";
+    pDescripcion.textContent = descripcion;
 
     div.addEventListener("click", () => {
-        simbolo.textContent = simbolo.textContent === "❌" ? "✔️" : "❌";
+        if (simbolo.src.includes("x.svg")) {
+            simbolo.src = "./assets/icons/cheque.svg"; 
+            simbolo.alt = "Completado";
+            div.classList.add("completado");
+        }
     });
 
     div.appendChild(simbolo);
     div.appendChild(pTitulo);
     div.appendChild(pFecha);
-    div.appendChild(pEstado);
+    div.appendChild(pDescripcion);
 
     return div;
 };

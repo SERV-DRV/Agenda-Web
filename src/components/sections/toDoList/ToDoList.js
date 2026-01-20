@@ -10,10 +10,10 @@ let ToDoList = () => {
     section.appendChild(h2);
 
     listdb.forEach((item) => {
-        section.appendChild(ItemToDo(item.titulo, item.fechaVencimiento, item.estado));
+        section.appendChild(ItemToDoList(item.titulo, item.fechaVencimiento, item.descripcion));
     });
 
     return section;
 };
 
-export { ItemToDoList };
+export { ToDoList };

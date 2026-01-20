@@ -1,8 +1,103 @@
 .contactos {
-    width: 100%;
-    padding: 10px;
-
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: stretch;
+    gap: 12px;
+    padding: 14px 18px;
+    margin: 8px 0;
+    width: calc(100% - 16px);
+    border: 1px solid #3b82f6;
+    border-radius: 10px;
+    background-color: #eff6ff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.contactos:hover {
+    background-color: #dbeafe;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.contactos h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e3a8a;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.item-contacto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-radius: 10px;
+    background-color: #eff6ff;
+    border: 1px solid #3b82f6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+.item-contacto:hover {
+    background-color: #dbeafe;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.item-contacto .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.item-contacto .left img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #2563eb;
+}
+
+.item-contacto .left p {
+    margin: 0;
+    font-weight: 700;
+    font-size: 16px;
+    color: #1e3a8a;
+}
+
+.item-contacto .right p {
+    margin: 0;
+    font-size: 16px;
+    color: #2563eb;
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .contactos {
+        padding: 12px 14px;
+        gap: 10px;
+        width: calc(100% - 8px);
+    }
+
+    .contactos h2 {
+        font-size: 18px;
+    }
+
+    .item-contacto {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    .item-contacto .left img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .item-contacto .left p,
+    .item-contacto .right p {
+        font-size: 14px;
+    }
 }
