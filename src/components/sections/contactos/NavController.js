@@ -1,7 +1,7 @@
 import { NewContactForm } from "../newContactForm/NewContactForm.js";
 import { Contactos } from "../contactos/Contactos.js";
 import { ToDoList } from "../toDoList/ToDoList.js";
-import { NewToDoListForm } from "../newToDoListForm/newToDoListForm.js";
+import { NewToDoListForm } from "../newToDoListForm/NewToDoListForm.js";
 
 let container = document.getElementById("");
 
