@@ -79,7 +79,6 @@ let NewToDoListForm = function () {
         listdb.push(nuevaTarea);
         saveToStorage('lista_tareas', listdb);
         form.reset();
-        window.location.reload();
     });
 
     return form;
