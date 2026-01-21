@@ -12,7 +12,6 @@ let NewContactForm = function () {
     legend.className = "contact-form__legend";
     legend.textContent = "Formulario de Contacto";
 
-    // Nombre
     let labelNombre = document.createElement("label");
     labelNombre.className = "contact-form__label";
     labelNombre.textContent = "Nombre";
@@ -26,7 +25,6 @@ let NewContactForm = function () {
     inputNombre.placeholder = "Ingrese su nombre";
     inputNombre.required = true;
 
-    // Teléfono
     let labelTelefono = document.createElement("label");
     labelTelefono.className = "contact-form__label";
     labelTelefono.textContent = "Teléfono";
@@ -40,13 +38,11 @@ let NewContactForm = function () {
     inputTelefono.placeholder = "Ingrese su teléfono";
     inputTelefono.required = true;
 
-    // Botón
     let button = document.createElement("button");
     button.className = "contact-form__button";
     button.type = "submit";
     button.textContent = "Enviar";
 
-    // Estructura
     fieldset.appendChild(legend);
     fieldset.appendChild(labelNombre);
     fieldset.appendChild(inputNombre);
@@ -58,7 +54,6 @@ let NewContactForm = function () {
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        //Programacion del formulario
         let contacto = {
             nombre: inputNombre.value,
             telefono: inputTelefono.value
@@ -66,6 +61,7 @@ let NewContactForm = function () {
 
         console.log(contacto);
         ContactList.push(contacto);
+        form.reset();
     });
 
     return form;

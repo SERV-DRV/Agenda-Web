@@ -19,6 +19,11 @@ let ItemToDoList = (titulo, fechaVencimiento, descripcion) => {
     pDescripcion.className = "item-todolist__descripcion";
     pDescripcion.textContent = descripcion;
 
+    let btnEliminar = document.createElement("img");
+    btnEliminar.className = "item-todolist__eliminar";
+    btnEliminar.src = "./assets/icons/trashDelete.svg";
+    btnEliminar.alt = "Eliminar tarea";
+
     div.addEventListener("click", () => {
         if (simbolo.src.includes("x.svg")) {
             simbolo.src = "./assets/icons/cheque.svg"; 
@@ -27,10 +32,16 @@ let ItemToDoList = (titulo, fechaVencimiento, descripcion) => {
         }
     });
 
+    btnEliminar.addEventListener("click", (e) => {
+        e.stopPropagation();
+        div.remove();
+    });
+
     div.appendChild(simbolo);
     div.appendChild(pTitulo);
     div.appendChild(pFecha);
     div.appendChild(pDescripcion);
+    div.appendChild(btnEliminar); 
 
     return div;
 };

@@ -1,6 +1,6 @@
 import { Button } from "./components/common/button/Button.js";
 import { Contactos } from "./components/sections/contactos/Contactos.js";
-import { viewContactos, viewNewContact, viewToDoList } from "./components/sections/contactos/NavController.js"
+import { viewContactos, viewNewContact, viewToDoList, viewNewToDoList } from "./components/sections/contactos/NavController.js"
 //App
 let app = document.getElementById("app");
  
@@ -10,7 +10,7 @@ let nav = document.getElementById("nav");
 nav.appendChild(Button("Agenda", "agenda", "account.svg", viewContactos));
 nav.appendChild(Button("Crear Contacto", "plus", "plus.svg", viewNewContact));
 nav.appendChild(Button("ToDoList", "todoList", "chequesEnLista.svg", viewToDoList ));
-nav.appendChild(Button("Crear Tarea", "plus", "plus.svg"));
+nav.appendChild(Button("Crear Tarea", "plus", "plus.svg", viewNewToDoList));
  
 //section container
 let container = document.getElementById("container");

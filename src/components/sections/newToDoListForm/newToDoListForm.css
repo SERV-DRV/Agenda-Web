@@ -1,5 +1,6 @@
-.contact-form {
+.todo-form {
   max-width: 400px;
+  width: 90%;
   margin: 40px auto;
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: #ffffff;
@@ -9,26 +10,29 @@
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
-.contact-form:hover {
+.todo-form:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
 
-.contact-form__fieldset {
+.todo-form__fieldset {
   border: none;
   padding: 0;
+  margin: 0;
 }
 
-.contact-form__legend {
+.todo-form__legend {
   font-size: 1.5rem;
   font-weight: 700;
   color: #1e3a8a;
   margin-bottom: 25px;
+  display: block;
 }
 
-.contact-form__label {
+.todo-form__label {
   display: block;
   margin-top: 15px;
   margin-bottom: 6px;
@@ -36,7 +40,8 @@
   color: #374151;
 }
 
-.contact-form__input {
+.todo-form__input,
+.todo-form__textarea {
   width: 100%;
   padding: 12px 14px;
   font-size: 1rem;
@@ -45,16 +50,23 @@
   box-sizing: border-box;
   background-color: #eff6ff;
   transition: all 0.3s ease;
+  font-family: inherit;
 }
 
-.contact-form__input:focus {
+.todo-form__textarea {
+  height: 100px;
+  resize: none;
+}
+
+.todo-form__input:focus,
+.todo-form__textarea:focus {
   outline: none;
   border-color: #3b82f6;
   background-color: #ffffff;
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
 }
 
-.contact-form__button {
+.todo-form__button {
   margin-top: 25px;
   width: 100%;
   padding: 14px 0;
@@ -69,32 +81,35 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form__button:hover {
+.todo-form__button:hover {
   background: linear-gradient(135deg, #1d4ed8, #2563eb);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.contact-form__button:active {
+.todo-form__button:active {
   transform: translateY(2px);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 480px) {
-  .contact-form {
-    margin: 20px;
+  .todo-form {
     padding: 25px 20px;
+    margin: 20px auto;
   }
 
-  .contact-form__legend {
+  .todo-form__legend {
     font-size: 1.3rem;
+    margin-bottom: 15px;
   }
 
-  .contact-form__input {
+  .todo-form__input,
+  .todo-form__textarea {
     padding: 10px 12px;
+    font-size: 0.95rem;
   }
 
-  .contact-form__button {
+  .todo-form__button {
     padding: 12px 0;
     font-size: 1rem;
   }

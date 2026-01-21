@@ -1,87 +1,90 @@
 .button-container {
-    display: flex;
-    align-items: center;
-    gap: 16px;               
-    padding: 12px 18px;
-    border-radius: 16px;
-    background-color: #eff6ff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    cursor: pointer;
-    user-select: none;
-    margin-bottom: 20px;
-    transition: 
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 18px;
+  border-radius: 16px;
+  background-color: #eff6ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 20px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .button-container:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-    background-color: #dbeafe;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  background-color: #dbeafe;
 }
 
 .button-container:active {
-    transform: scale(0.97);
+  transform: scale(0.97);
 }
 
 .button-image {
-    width: 48px;
-    height: 48px;
-    background-color: #3b82f6;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  width: 48px;
+  height: 48px;
+  background-color: #3b82f6;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .button-image img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    transition: transform 0.2s ease;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease;
 }
 
 .button-container:hover .button-image {
-    transform: scale(1.1);
-    background-color: #1d4ed8;
+  transform: scale(1.1);
+  background-color: #1d4ed8;
 }
 
 .button-text {
-    margin: 3px 0 0 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    color: #1e3a8a;
-    user-select: none;
-    white-space: nowrap;
-    transition: color 0.2s ease;
+  margin: 3px 0 0 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #1e3a8a;
+  user-select: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
 }
 
 .button-container:hover .button-text {
-    color: #3b82f6;
+  color: #3b82f6;
 }
 
 @media (max-width: 480px) {
-    .button-container {
-        padding: 10px 14px;
-        gap: 12px;
-    }
+  .button-container {
+    padding: 10px 14px;
+    gap: 12px;
+  }
 
-    .button-image {
-        width: 40px;
-        height: 40px;
-    }
+  .button-image {
+    width: 40px;
+    height: 40px;
+  }
 
-    .button-image img {
-        width: 20px;
-        height: 20px;
-    }
+  .button-image img {
+    width: 20px;
+    height: 20px;
+  }
 
-    .button-text {
-        font-size: 14px;
-    }
+  .button-text {
+    font-size: 14px;
+  }
 }

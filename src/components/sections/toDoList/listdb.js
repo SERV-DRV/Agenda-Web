@@ -1,78 +1,78 @@
 let listdb = [
     {
-        titulo: "Implementar Login",
-        fechaVencimiento: "2026-01-25",
-        descripcion: "Prioridad alta: integrar autenticación con OAuth2"
+        titulo: "Seminario: Proyecto de Vida",
+        fechaVencimiento: "2025-02-15",
+        descripcion: "Redactar la visión, misión y áreas de prioridad para la entrega final del primer bloque."
     },
     {
-        titulo: "Optimizar Base de Datos",
-        fechaVencimiento: "2026-02-02",
-        descripcion: "Reducir tiempos de consulta y revisar índices"
+        titulo: "Documentar API de Inventario",
+        fechaVencimiento: "2025-01-30",
+        descripcion: "Generar la documentación técnica detallando cada endpoint y los códigos de respuesta en Swagger."
     },
     {
-        titulo: "Actualizar Librerías",
-        fechaVencimiento: "2026-01-30",
-        descripcion: "Actualizar dependencias a las últimas versiones estables"
+        titulo: "Actualizar Dependencias NPM",
+        fechaVencimiento: "2025-02-05",
+        descripcion: "Migrar el proyecto a Node 20 LTS y actualizar librerías de seguridad para evitar vulnerabilidades."
     },
     {
-        titulo: "Documentar API",
-        fechaVencimiento: "2026-02-05",
-        descripcion: "Generar documentación con Swagger para endpoints REST"
+        titulo: "Seminario: Árbol Genealógico",
+        fechaVencimiento: "2025-02-10",
+        descripcion: "Investigar antecedentes familiares y recopilar fotografías para el anexo del Proyecto de Vida."
     },
     {
-        titulo: "Corregir Bug en Frontend",
-        fechaVencimiento: "2026-01-28",
-        descripcion: "Error al renderizar componentes en resoluciones móviles"
+        titulo: "Cálculo Integral: Áreas",
+        fechaVencimiento: "2025-02-03",
+        descripcion: "Resolver la serie de ejercicios sobre el cálculo de áreas bajo la curva utilizando integrales definidas."
     },
     {
-        titulo: "Configurar CI/CD",
-        fechaVencimiento: "2026-02-10",
-        descripcion: "Automatizar pruebas y despliegues usando GitHub Actions"
+        titulo: "Optimización de Consultas SQL",
+        fechaVencimiento: "2025-03-01",
+        descripcion: "Revisar los índices de la base de datos para reducir el tiempo de carga de los reportes mensuales."
     },
     {
-        titulo: "Diseñar Página de Inicio",
-        fechaVencimiento: "2026-02-01",
-        descripcion: "Crear layout responsive con HTML, CSS y React"
+        titulo: "Seminario: Metas a Corto Plazo",
+        fechaVencimiento: "2025-02-20",
+        descripcion: "Definir estrategias y cronograma para las metas académicas del presente ciclo escolar."
     },
     {
-        titulo: "Integrar API de Pagos",
-        fechaVencimiento: "2026-02-07",
-        descripcion: "Conectar Stripe para pagos seguros en el frontend"
+        titulo: "Refactorizar Componentes UI",
+        fechaVencimiento: "2025-02-12",
+        descripcion: "Limpiar código duplicado en los botones y formularios para mejorar la mantenibilidad del frontend."
     },
     {
-        titulo: "Revisar Logs del Servidor",
-        fechaVencimiento: "2026-01-29",
-        descripcion: "Detectar errores críticos y optimizar rendimiento"
+        titulo: "Derivadas de Orden Superior",
+        fechaVencimiento: "2025-01-29",
+        descripcion: "Estudio de la segunda derivada para encontrar puntos de inflexión y optimización de funciones."
     },
     {
-        titulo: "Escribir Tests Unitarios",
-        fechaVencimiento: "2026-02-03",
-        descripcion: "Cobertura mínima del 80% para backend en Node.js"
+        titulo: "Configurar Servidor de Pruebas",
+        fechaVencimiento: "2025-03-10",
+        descripcion: "Desplegar la aplicación en un entorno de staging para realizar pruebas de estrés con usuarios reales."
     },
     {
-        titulo: "Implementar Notificaciones",
-        fechaVencimiento: "2026-02-06",
-        descripcion: "Alertas push y email para eventos importantes"
+        titulo: "Seminario: Investigación Acción",
+        fechaVencimiento: "2025-03-25",
+        descripcion: "Tabular los resultados de las encuestas realizadas sobre la seguridad alimentaria en la comunidad."
     },
     {
-        titulo: "Optimizar Imágenes",
-        fechaVencimiento: "2026-01-31",
-        descripcion: "Reducir tamaño sin perder calidad para mejorar carga"
+        titulo: "Integrales por Sustitución",
+        fechaVencimiento: "2025-02-18",
+        descripcion: "Aplicar el método de cambio de variable para resolver integrales indefinidas de funciones compuestas."
     },
     {
-        titulo: "Configurar Roles de Usuario",
-        fechaVencimiento: "2026-02-04",
-        descripcion: "Permisos para admin, moderador y usuario final"
+        titulo: "Límites e Indeterminaciones",
+        fechaVencimiento: "2025-02-24",
+        descripcion: "Resolución de límites al infinito y casos de 0/0 mediante la regla de L'Hôpital."
     },
     {
-        titulo: "Migrar Servidor",
-        fechaVencimiento: "2026-02-08",
-        descripcion: "Mover aplicación a servidor cloud más rápido y seguro"
+        titulo: "Actualizar Portafolio Digital",
+        fechaVencimiento: "2025-02-28",
+        descripcion: "Subir los mejores proyectos realizados en GitHub y redactar los casos de estudio de cada uno."
     },
     {
-        titulo: "Auditoría de Seguridad",
-        fechaVencimiento: "2026-02-12",
-        descripcion: "Revisar vulnerabilidades y actualizar contraseñas"
+        titulo: "Probabilidad y Estadística",
+        fechaVencimiento: "2025-03-05",
+        descripcion: "Cálculo de desviación estándar y varianza para el análisis de datos en el proyecto de investigación."
     }
 ];
 

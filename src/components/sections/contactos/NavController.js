@@ -1,6 +1,7 @@
 import { NewContactForm } from "../newContactForm/NewContactForm.js";
-import { Contactos } from "../contactos/Contactos.js"
+import { Contactos } from "../contactos/Contactos.js";
 import { ToDoList } from "../toDoList/ToDoList.js";
+import { NewToDoListForm } from "../newToDoListForm/newToDoListForm.js";
 
 let container = document.getElementById("");
 
@@ -22,4 +23,10 @@ let viewToDoList = () => {
     container.appendChild(ToDoList());
 };
 
-export {viewContactos, viewNewContact, viewToDoList};
+let viewNewToDoList = function (){
+    let container = document.getElementById("container");
+    container.innerHTML ="";
+    container.appendChild(NewToDoListForm());
+}
+
+export {viewContactos, viewNewContact, viewToDoList, viewNewToDoList};
