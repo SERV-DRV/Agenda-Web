@@ -1,4 +1,6 @@
-let listdb = [
+import { getFromStorage } from "../../../storage/storage.js";
+
+const initialTasks = [
     {
         titulo: "Seminario: Proyecto de Vida",
         fechaVencimiento: "2025-02-15",
@@ -75,5 +77,6 @@ let listdb = [
         descripcion: "Cálculo de desviación estándar y varianza para el análisis de datos en el proyecto de investigación."
     }
 ];
+let listdb = getFromStorage('lista_tareas') || initialTasks;
 
 export { listdb };

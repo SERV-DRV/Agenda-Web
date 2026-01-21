@@ -1,7 +1,7 @@
 import { ContactList } from "../contactos/db.js";
+import { saveToStorage } from "../../../storage/storage.js";
 
 let NewContactForm = function () {
-
     let form = document.createElement("form");
     form.className = "contact-form";
 
@@ -15,26 +15,20 @@ let NewContactForm = function () {
     let labelNombre = document.createElement("label");
     labelNombre.className = "contact-form__label";
     labelNombre.textContent = "Nombre";
-    labelNombre.setAttribute("for", "nombre");
 
     let inputNombre = document.createElement("input");
     inputNombre.className = "contact-form__input";
     inputNombre.type = "text";
-    inputNombre.id = "nombre";
-    inputNombre.name = "nombre";
     inputNombre.placeholder = "Ingrese su nombre";
     inputNombre.required = true;
 
     let labelTelefono = document.createElement("label");
     labelTelefono.className = "contact-form__label";
     labelTelefono.textContent = "Teléfono";
-    labelTelefono.setAttribute("for", "telefono");
 
     let inputTelefono = document.createElement("input");
     inputTelefono.className = "contact-form__input";
     inputTelefono.type = "tel";
-    inputTelefono.id = "telefono";
-    inputTelefono.name = "telefono";
     inputTelefono.placeholder = "Ingrese su teléfono";
     inputTelefono.required = true;
 
@@ -49,7 +43,6 @@ let NewContactForm = function () {
     fieldset.appendChild(labelTelefono);
     fieldset.appendChild(inputTelefono);
     fieldset.appendChild(button);
-
     form.appendChild(fieldset);
 
     form.addEventListener("submit", (e) => {
@@ -59,8 +52,8 @@ let NewContactForm = function () {
             telefono: inputTelefono.value
         };
 
-        console.log(contacto);
         ContactList.push(contacto);
+        saveToStorage('agenda_telefonica', ContactList);
         form.reset();
     });
 

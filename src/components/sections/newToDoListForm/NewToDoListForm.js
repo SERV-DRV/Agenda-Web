@@ -1,4 +1,6 @@
 import { listdb } from "../toDoList/listdb.js"; 
+import { saveToStorage } from "../../../storage/storage.js";
+
 let NewToDoListForm = function () {
 
     let form = document.createElement("form");
@@ -70,12 +72,14 @@ let NewToDoListForm = function () {
         let nuevaTarea = {
             titulo: inputTitulo.value,
             fechaVencimiento: inputFecha.value,
-            descripcion: inputDescripcion.value
+            descripcion: inputDescripcion.value,
+            completada: false 
         };
 
-        console.log("Nueva tarea agregada:", nuevaTarea);
         listdb.push(nuevaTarea);
+        saveToStorage('lista_tareas', listdb);
         form.reset();
+        window.location.reload();
     });
 
     return form;

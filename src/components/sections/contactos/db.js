@@ -1,4 +1,6 @@
-let ContactList = [
+import { getFromStorage } from "../../../storage/storage.js";
+
+const initialContacts = [
     { nombre: "Juan Carlos Pérez García", telefono: "55892143" },
     { nombre: "María Alejandra Rodríguez López", telefono: "41228765" },
     { nombre: "Luis Fernando Morales Martínez", telefono: "30459901" },
@@ -10,5 +12,6 @@ let ContactList = [
     { nombre: "Marcos Vinicio Soto Mayorga", telefono: "33417722" },
     { nombre: "Claudia Irene Herrera Juárez", telefono: "58904410" }
 ];
+let ContactList = getFromStorage('agenda_telefonica') || initialContacts;
 
 export { ContactList };
