@@ -1,5 +1,5 @@
 import { listdb } from "../toDoList/listdb.js"; 
-import { saveToStorage } from "../../../storage/storage.js";
+import { saveTasksToStorage } from "../../../storage/storage.js";
 
 let NewToDoListForm = function () {
 
@@ -77,7 +77,7 @@ let NewToDoListForm = function () {
         };
 
         listdb.push(nuevaTarea);
-        saveToStorage('lista_tareas', listdb);
+        saveTasksToStorage(listdb);
         form.reset();
     });
 

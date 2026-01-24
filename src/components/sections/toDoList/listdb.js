@@ -1,4 +1,4 @@
-import { getFromStorage } from "../../../storage/storage.js";
+import { getTasksFromStorage } from "../../../storage/storage.js";
 
 const initialTasks = [
     {
@@ -77,6 +77,8 @@ const initialTasks = [
         descripcion: "Cálculo de desviación estándar y varianza para el análisis de datos en el proyecto de investigación."
     }
 ];
-let listdb = getFromStorage('lista_tareas') || initialTasks;
+
+let storedTasks = getTasksFromStorage();
+let listdb = storedTasks.length > 0 ? storedTasks : initialTasks;
 
 export { listdb };

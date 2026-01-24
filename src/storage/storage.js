@@ -1,8 +1,25 @@
-export const saveToStorage = (key, data) => {
-    localStorage.setItem(key, JSON.stringify(data));
-};
+const LOCAL_STORAGE_KEY_CONTACTS = 'agenda_telefonica';
+const LOCAL_STORAGE_KEY_TASKS = 'lista_tareas';
 
-export const getFromStorage = (key) => {
-    const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : null;
+function saveContactsToStorage(contactos) {
+    localStorage.setItem(LOCAL_STORAGE_KEY_CONTACTS, JSON.stringify(contactos));
+}
+
+function getContactsFromStorage() {
+    return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_CONTACTS)) || [];
+}
+
+function saveTasksToStorage(tareas) {
+    localStorage.setItem(LOCAL_STORAGE_KEY_TASKS, JSON.stringify(tareas));
+}
+
+function getTasksFromStorage() {
+    return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_TASKS)) || [];
+}
+
+export { 
+    saveContactsToStorage, 
+    getContactsFromStorage,
+    saveTasksToStorage,
+    getTasksFromStorage
 };

@@ -1,5 +1,5 @@
 import { ContactList } from "../contactos/db.js";
-import { saveToStorage } from "../../../storage/storage.js";
+import { saveContactsToStorage } from "../../../storage/storage.js";
 
 let NewContactForm = function () {
     let form = document.createElement("form");
@@ -53,7 +53,7 @@ let NewContactForm = function () {
         };
 
         ContactList.push(contacto);
-        saveToStorage('agenda_telefonica', ContactList);
+        saveContactsToStorage(ContactList);
         form.reset();
     });
 

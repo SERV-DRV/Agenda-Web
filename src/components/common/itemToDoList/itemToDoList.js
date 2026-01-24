@@ -1,5 +1,5 @@
 import { listdb } from "../../sections/toDoList/listdb.js";
-import { saveToStorage } from "../../../storage/storage.js";
+import { saveTasksToStorage } from "../../../storage/storage.js";
 
 let ItemToDoList = (titulo, fechaVencimiento, descripcion) => {
   let div = document.createElement("div");
@@ -45,7 +45,7 @@ let ItemToDoList = (titulo, fechaVencimiento, descripcion) => {
       const tarea = listdb.find((t) => t.titulo === titulo);
       if (tarea) {
         tarea.completada = true;
-        saveToStorage("lista_tareas", listdb);
+        saveTasksToStorage(listdb);
       }
     }
   });
@@ -56,7 +56,7 @@ let ItemToDoList = (titulo, fechaVencimiento, descripcion) => {
     const index = listdb.findIndex((t) => t.titulo === titulo);
     if (index !== -1) {
       listdb.splice(index, 1);
-      saveToStorage("lista_tareas", listdb);
+      saveTasksToStorage(listdb);
     }
 
     div.remove();
