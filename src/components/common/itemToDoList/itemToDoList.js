@@ -1,5 +1,6 @@
 import { listdb } from "../../sections/toDoList/listdb.js";
 import { saveTasksToStorage } from "../../../storage/storage.js";
+import { EditToDoListForm } from "../editToDoListForm/EditToDoListForm.js";
 
 let ItemToDoList = (titulo, fechaVencimiento, descripcion) => {
   let div = document.createElement("div");
@@ -36,17 +37,34 @@ let ItemToDoList = (titulo, fechaVencimiento, descripcion) => {
   btnEliminar.src = "./assets/icons/trashDelete.svg";
   btnEliminar.alt = "Eliminar tarea";
 
-  div.addEventListener("click", () => {
-    if (!div.classList.contains("completado")) {
-      simbolo.src = "./assets/icons/cheque.svg";
-      simbolo.alt = "Completado";
-      div.classList.add("completado");
+  let btnEditar = document.createElement("img");
+  btnEditar.className = "item-todolist__editar";
+  btnEditar.src = "./assets/icons/edit.svg";
+  btnEditar.alt = "Editar tarea";
 
-      const tarea = listdb.find((t) => t.titulo === titulo);
-      if (tarea) {
-        tarea.completada = true;
-        saveTasksToStorage(listdb);
+  div.addEventListener("click", () => {
+    const tarea = listdb.find((t) => t.titulo === titulo);
+
+    if (tarea) {
+      tarea.completada = !tarea.completada;
+
+      if (tarea.completada) {
+        simbolo.src = "./assets/icons/cheque.svg";
+        simbolo.alt = "Completado";
+        div.classList.add("completado");
+        
+        btnEliminar.classList.add("deshabilitado");
+        btnEditar.classList.add("deshabilitado");
+      } else {
+        simbolo.src = "./assets/icons/x.svg";
+        simbolo.alt = "No completado";
+        div.classList.remove("completado");
+
+        btnEliminar.classList.remove("deshabilitado");
+        btnEditar.classList.remove("deshabilitado");
       }
+
+      saveTasksToStorage(listdb);
     }
   });
 
@@ -62,12 +80,27 @@ let ItemToDoList = (titulo, fechaVencimiento, descripcion) => {
     div.remove();
   });
 
+  btnEditar.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const formularioExistente = div.querySelector(".todo-form");
+
+    if (formularioExistente) {
+      formularioExistente.remove();
+    } else {
+      const tareaActual = listdb.find((t) => t.titulo === titulo);
+      const formularioEdicion = EditToDoListForm(tareaActual);
+      
+      div.appendChild(formularioEdicion);
+    }
+  });
+
   div.appendChild(simbolo);
   div.appendChild(pTitulo);
   div.appendChild(pFecha);
   div.appendChild(pDescripcion);
   div.appendChild(btnEliminar);
-
+  div.appendChild(btnEditar);
   return div;
 };
 

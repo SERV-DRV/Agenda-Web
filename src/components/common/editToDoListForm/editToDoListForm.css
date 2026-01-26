@@ -1,0 +1,116 @@
+.todo-form {
+  max-width: 400px;
+  width: 90%;
+  margin: 40px auto;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 35px 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.todo-form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.todo-form__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-form__legend {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 25px;
+  display: block;
+}
+
+.todo-form__label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.todo-form__input,
+.todo-form__textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #eff6ff;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.todo-form__textarea {
+  height: 100px;
+  resize: none;
+}
+
+.todo-form__input:focus,
+.todo-form__textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.todo-form__button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.todo-form__button:hover {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.todo-form__button:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 480px) {
+  .todo-form {
+    padding: 25px 20px;
+    margin: 20px auto;
+  }
+
+  .todo-form__legend {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .todo-form__input,
+  .todo-form__textarea {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .todo-form__button {
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+}
