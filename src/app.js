@@ -10,7 +10,7 @@ let nav = document.getElementById("nav");
 nav.appendChild(Button("Agenda", "agenda", "account.svg", viewContactos));
 nav.appendChild(Button("Crear Contacto", "plus", "plus.svg", viewNewContact));
 nav.appendChild(Button("ToDoList", "todoList", "chequesEnLista.svg", viewToDoList ));
-nav.appendChild(Button("Crear Tarea", "plus", "plus.svg", viewNewToDoList));
+nav.appendChild(Button("Crear Tarea", "plus", "addTask.svg", viewNewToDoList));
  
 //section container
 let container = document.getElementById("container");
