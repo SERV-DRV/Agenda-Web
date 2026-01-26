@@ -1,29 +1,43 @@
 .info-contactos-horizontal {
   display: flex;
-  width: 900px;
+  width: 95%;
+  max-width: 900px;
   min-height: 500px;
   background: #ffffff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 2rem auto;
+  position: relative;
   border-radius: 2.5rem;
   box-shadow: 0 30px 70px rgba(30, 58, 138, 0.2);
   overflow: hidden;
   border: 1px solid #e2e8f0;
+  animation: fadeIn 0.5s ease;
+}
+
+@media (min-height: 600px) {
+  .info-contactos-horizontal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
 }
 
 .info-contactos__foto-side {
   width: 40%;
+  min-width: 300px;
   background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
 .info-contactos__foto-side img {
-  width: 240px;
-  height: 240px;
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
   border: 8px solid rgba(255, 255, 255, 0.3);
@@ -33,7 +47,7 @@
 
 .info-contactos__datos-side {
   width: 60%;
-  padding: 4rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,9 +55,9 @@
 }
 
 .info-contactos__datos-side h2 {
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.5rem 0;
   color: #1e3a8a;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -1px;
 }
@@ -51,74 +65,93 @@
 .info-contactos__nombre,
 .info-contactos__telefono {
   width: 100%;
-  margin: 0 0 1.5rem 0;
-  padding: 1.5rem;
+  margin: 0 0 1.2rem 0;
+  padding: 1.2rem;
   background: #f8fafc;
-  border-radius: 1.25rem;
-  font-size: 1.2rem;
+  border-radius: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #334155;
   border: 1px solid #e2e8f0;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .info-contactos__nombre::before {
   content: "NOMBRE COMPLETO";
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #3b82f6;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   letter-spacing: 1px;
 }
 
 .info-contactos__telefono::before {
   content: "TELÉFONO MÓVIL";
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #3b82f6;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   letter-spacing: 1px;
 }
 
 .info-contactos__boton {
   align-self: flex-start;
-  margin-top: 1.5rem;
-  padding: 1.2rem 3.5rem;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
   border-radius: 1rem;
   border: none;
   background: #1e3a8a;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s ease;
   box-shadow: 0 10px 20px rgba(30, 58, 138, 0.2);
 }
 
 .info-contactos__boton:hover {
   background: #3b82f6;
   transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .info-contactos-horizontal {
-    width: 95%;
+    flex-direction: column;
     min-height: auto;
+    width: 90%;
     position: relative;
     top: 0;
     left: 0;
     transform: none;
-    flex-direction: column;
     margin: 2rem auto;
   }
+
   .info-contactos__foto-side {
     width: 100%;
     padding: 3rem 0;
   }
+
   .info-contactos__datos-side {
     width: 100%;
     padding: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-contactos__boton {
+    align-self: center;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
   }
 }
