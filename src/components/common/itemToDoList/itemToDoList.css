@@ -31,9 +31,9 @@
 }
 
 .deshabilitado {
-    opacity: 0.3;            
-    pointer-events: none;   
-    cursor: not-allowed;    
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
 .item-todolist__eliminar:active {
@@ -86,6 +86,30 @@
   vertical-align: middle;
 }
 
+.item-todolist__prioridad {
+  font-size: 10px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  width: fit-content;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+.prioridad--urgente {
+  color: #ffffff;
+  background-color: #ef4444;
+  border: 1px solid #b91c1c;
+}
+
+.prioridad--con-tiempo {
+  color: #ffffff;
+  background-color: #10b981;
+  border: 1px solid #047857;
+}
+
 .item-todolist__descripcion {
   font-size: 14px;
   color: #68696d;
@@ -107,6 +131,13 @@
   color: #8f8c8c;
 }
 
+.item-todolist.completado .item-todolist__prioridad {
+  background-color: #9ca3af;
+  border-color: #9ca3af;
+  color: #ffffff;
+  opacity: 0.6;
+}
+
 .item-todolist.completado .item-todolist__eliminar {
   opacity: 0.7;
 }
@@ -125,6 +156,11 @@
   .item-todolist__fecha,
   .item-todolist__descripcion {
     font-size: 13px;
+  }
+
+  .item-todolist__prioridad {
+    font-size: 10px;
+    padding: 4px 10px;
   }
 
   .item-todolist__eliminar {

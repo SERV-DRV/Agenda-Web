@@ -2,7 +2,7 @@ import { listdb } from "../../sections/toDoList/listdb.js";
 import { saveTasksToStorage } from "../../../storage/storage.js";
 import { EditToDoListForm } from "../editToDoListForm/EditToDoListForm.js";
 
-let ItemToDoList = (titulo, fechaVencimiento, descripcion) => {
+let ItemToDoList = (titulo, fechaVencimiento, descripcion, prioridad) => {
   let div = document.createElement("div");
   div.className = "item-todolist";
 
@@ -28,6 +28,16 @@ let ItemToDoList = (titulo, fechaVencimiento, descripcion) => {
   pFecha.className = "item-todolist__fecha";
   pFecha.textContent = fechaVencimiento;
 
+  let pPrioridad = document.createElement("p");
+  pPrioridad.className = "item-todolist__prioridad";
+  pPrioridad.textContent = prioridad;
+
+  if (prioridad === "Urgente") {
+    pPrioridad.classList.add("prioridad--urgente");
+  } else {
+    pPrioridad.classList.add("prioridad--con-tiempo");
+  }
+
   let pDescripcion = document.createElement("p");
   pDescripcion.className = "item-todolist__descripcion";
   pDescripcion.textContent = descripcion;
@@ -42,7 +52,16 @@ let ItemToDoList = (titulo, fechaVencimiento, descripcion) => {
   btnEditar.src = "./assets/icons/edit.svg";
   btnEditar.alt = "Editar tarea";
 
-  div.addEventListener("click", () => {
+  div.addEventListener("click", (e) => {
+    if (
+      e.target.closest("form") ||
+      e.target.closest("input") ||
+      e.target.closest("textarea") ||
+      e.target.closest("button")
+    ) {
+      return;
+    }
+
     const tarea = listdb.find((t) => t.titulo === titulo);
 
     if (tarea) {
@@ -52,55 +71,55 @@ let ItemToDoList = (titulo, fechaVencimiento, descripcion) => {
         simbolo.src = "./assets/icons/cheque.svg";
         simbolo.alt = "Completado";
         div.classList.add("completado");
-        
         btnEliminar.classList.add("deshabilitado");
         btnEditar.classList.add("deshabilitado");
+
+        const formularioExistente = div.querySelector(".todo-form");
+        if (formularioExistente) formularioExistente.remove();
       } else {
         simbolo.src = "./assets/icons/x.svg";
         simbolo.alt = "No completado";
         div.classList.remove("completado");
-
         btnEliminar.classList.remove("deshabilitado");
         btnEditar.classList.remove("deshabilitado");
       }
-
       saveTasksToStorage(listdb);
     }
   });
 
   btnEliminar.addEventListener("click", (e) => {
     e.stopPropagation();
-
     const index = listdb.findIndex((t) => t.titulo === titulo);
     if (index !== -1) {
       listdb.splice(index, 1);
       saveTasksToStorage(listdb);
     }
-
     div.remove();
   });
 
   btnEditar.addEventListener("click", (e) => {
     e.stopPropagation();
-
     const formularioExistente = div.querySelector(".todo-form");
 
     if (formularioExistente) {
       formularioExistente.remove();
     } else {
       const tareaActual = listdb.find((t) => t.titulo === titulo);
-      const formularioEdicion = EditToDoListForm(tareaActual);
-      
-      div.appendChild(formularioEdicion);
+      if (tareaActual) {
+        const formularioEdicion = EditToDoListForm(tareaActual);
+        div.appendChild(formularioEdicion);
+      }
     }
   });
 
   div.appendChild(simbolo);
   div.appendChild(pTitulo);
   div.appendChild(pFecha);
+  div.appendChild(pPrioridad);
   div.appendChild(pDescripcion);
   div.appendChild(btnEliminar);
   div.appendChild(btnEditar);
+
   return div;
 };
 
